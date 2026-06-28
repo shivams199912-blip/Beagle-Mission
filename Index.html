@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission: Make My Human Happy 🐶</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#fff9ef,#ffe9d6);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+
+}
+
+.card{
+
+width:380px;
+background:white;
+border-radius:25px;
+padding:35px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+position:relative;
+animation:pop .6s;
+
+}
+
+@keyframes pop{
+
+from{
+transform:scale(.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+.paws{
+
+position:absolute;
+font-size:22px;
+opacity:.12;
+
+}
+
+.p1{top:20px;left:25px;}
+.p2{top:40px;right:25px;}
+.p3{bottom:25px;left:35px;}
+.p4{bottom:35px;right:30px;}
+
+.dog{
+
+font-size:80px;
+animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+
+}
+
+h1{
+
+margin-top:10px;
+font-size:28px;
+color:#5b3b24;
+
+}
+
+p{
+
+margin-top:18px;
+line-height:1.7;
+color:#555;
+
+}
+
+button{
+
+margin-top:28px;
+padding:15px 35px;
+border:none;
+background:#ff914d;
+color:white;
+font-size:17px;
+border-radius:50px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+background:#ff7b29;
+
+}
+
+.hidden{
+display:none;
+}
+
+input{
+
+width:100%;
+padding:15px;
+border-radius:12px;
+border:2px solid #ffd3b5;
+font-size:16px;
+margin-top:20px;
+outline:none;
+
+}
+
+input:focus{
+
+border-color:#ff914d;
+
+}
+
+.small{
+
+font-size:14px;
+margin-top:15px;
+color:#888;
+
+}
+
+.heart{
+
+animation:heart 1s infinite;
+
+}
+
+@keyframes heart{
+
+50%{
+transform:scale(1.2);
+}
+
+}
+
+.success{
+
+font-size:20px;
+color:#ff6b6b;
+font-weight:600;
+margin-top:20px;
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<div class="paws p1">🐾</div>
+<div class="paws p2">🐾</div>
+<div class="paws p3">🐾</div>
+<div class="paws p4">🐾</div>
+
+<div id="page1">
+
+<div class="dog">🐶</div>
+
+<h1>Mission: Make My Human Happy</h1>
+
+<p>
+
+Hi! I'm <b>Biscuit</b>, a professional Beagle. 🦴
+
+<br><br>
+
+My human has wanted to ask you something for a while...
+
+Every time he tries, he gets a little nervous.
+
+So... he asked me to help instead.
+
+</p>
+
+<button onclick="nextPage()">
+🐾 Continue
+</button>
+
+</div>
+
+
+<div id="page2" class="hidden">
+
+<div class="dog">🐶</div>
+
+<h1>Beagle Inspection</h1>
+
+<p>
+
+🔍 Sniffing...
+
+<br><br>
+
+✔ Sweet smile detected
+
+<br>
+
+✔ Green flags detected
+
+<br>
+
+✔ Someone who makes my human smile detected
+
+<br><br>
+
+I think he likes you...
+
+Like...
+
+<b>really likes you.</b>
+
+<span class="heart">❤️</span>
+
+<br><br>
+
+He's hoping this is the beginning of more conversations,
+more laughs,
+and maybe even a coffee together someday.
+
+☕
+
+<br><br>
+
+If you're comfortable with it...
+
+could you leave your phone number below?
+
+</p>
+
+<input
+type="tel"
+placeholder="Your phone number 🐾"
+id="phone">
+
+<button onclick="submitForm()">
+🐶 Send to My Human
+</button>
+
+<div class="small">
+
+Promise:
+No spam.
+No random calls.
+Only genuine conversations...
+(and maybe some Beagle pictures. 🦴)
+
+</div>
+
+<div id="done" class="success hidden">
+
+🐶 YAY!!
+
+Mission Complete!
+
+You just made one shy human
+(and one Beagle)
+
+very, very happy. ❤️
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function nextPage(){
+
+document.getElementById("page1").classList.add("hidden");
+document.getElementById("page2").classList.remove("hidden");
+
+}
+
+function submitForm(){
+
+const phone=document.getElementById("phone").value.trim();
+
+if(phone===""){
+
+alert("Biscuit says: Don't forget your number! 🐶");
+
+return;
+
+}
+
+document.getElementById("done").classList.remove("hidden");
+
+}
+
+</script>
+
+</body>
+</html>
